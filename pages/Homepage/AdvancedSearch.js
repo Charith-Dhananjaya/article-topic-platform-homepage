@@ -1,25 +1,26 @@
-import { Button, Collapse, useMediaQuery } from '@mui/material';
-import { Box } from '@mui/system';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import React, { useState } from 'react';
+import { Button, Collapse, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/system";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import React, { useState } from "react";
 import Filter from "./Filter";
+
 
 const AdvancedSearch = () => {
   const [showFilters, setShowFilters] = useState(false);
-  const isSmallerScreen = useMediaQuery('(max-width:600px)');
+  const isSmallerScreen = useMediaQuery("(max-width:600px)");
 
   const toggleFilters = () => {
     setShowFilters(!showFilters);
   };
 
   return (
-    <Box sx={{background:"#fff"}}>
+    <Box sx={{ background: "#fff" }}>
       <Button
         variant="outlined"
         sx={{
-          backgroundColor: 'white',
-          margin: '20px',
-          marginTop: isSmallerScreen ? '10px' : '20px',
+          backgroundColor: "white",
+          marginLeft: 10,
+          marginTop: isSmallerScreen ? "10px" : "20px",
         }}
         startIcon={<FilterListIcon />}
         onClick={toggleFilters}
@@ -31,7 +32,11 @@ const AdvancedSearch = () => {
           <Filter />
         </Box>
       </Collapse>
+      
+    
+    
     </Box>
+    
   );
 };
 
